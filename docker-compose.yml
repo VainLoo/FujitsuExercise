@@ -1,0 +1,21 @@
+version: '3'
+services:
+  exercise-web-db:
+    image: mongo:4.2.2
+    environment:
+      MONGO_INITDB_DATABASE: exercise-web
+    ports:
+      - 27017:27017
+  exercise-web-frontend:
+    image: exercise-web-frontend:latest
+    environment:
+      PORT: 3000
+      PROXY_API: http://exercise-web-backend:8080/
+    ports:
+      - 3000:3000
+  exercise-web-backend:
+    image: exercise-web-backend:latest
+    environment:
+      MONGODB_URI: mongodb://exercise-web-db:27017/exercise-web
+    ports:
+      - 8080:8080

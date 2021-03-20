@@ -1,0 +1,24 @@
+<template>
+  <div>
+    <nuxt />
+  </div>
+</template>
+
+<style>
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+
+
+</style>
