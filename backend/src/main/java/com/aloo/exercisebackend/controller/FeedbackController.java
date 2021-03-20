@@ -15,27 +15,32 @@ public class FeedbackController {
     private FeedbackService feedbackService;
 
     @GetMapping
-    public List<Feedback> findAll(){
+    public List<Feedback> findAll() {
         return feedbackService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Feedback findById(@PathVariable String id){
+    public Feedback findById(@PathVariable String id) {
         return feedbackService.findById(id);
     }
 
     @PostMapping
-    public Feedback create(@RequestBody Feedback feedback){
+    public Feedback create(@RequestBody Feedback feedback) {
         return feedbackService.save(feedback);
     }
 
     @PutMapping("/{id}")
-    public Feedback update(@RequestBody Feedback feedback){
+    public Feedback update(@RequestBody Feedback feedback) {
         return feedbackService.save(feedback);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable String id){
+    public void deleteById(@PathVariable String id) {
         feedbackService.deleteById(id);
+    }
+
+    @DeleteMapping
+    public void deleteAll() {
+        feedbackService.deleteAll();
     }
 }

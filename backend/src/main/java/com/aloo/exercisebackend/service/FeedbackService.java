@@ -29,4 +29,8 @@ public class FeedbackService {
     public void deleteById(String id){
         feedbackRepository.deleteById(id);
     }
+
+    public void deleteAll() {
+        feedbackRepository.deleteAll();
+    }
 }

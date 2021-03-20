@@ -1,6 +1,6 @@
 <template>
 <client-only>
-    <div class="form-feedback">
+    <div class="form-feedback" id="feedback-form">
     <form>
         <h1 class="h3 mb-3 fw-normal">Please give us feedback</h1>
         <div class="mb-3">
@@ -61,30 +61,34 @@ export default {
         category: this.category,
         text: this.feedbackText
     }).then((data) => {
-        this.$emit('update-table', data)
+        this.$emit('update-table')
+        this.name = ""
+        this.email = ""
+        this.category = []
+        this.feedbackText = ""
   })
     },
     checkForm:function(e) {
         this.errors = [];
         if (!this.name) {
-          this.errors.push("Name required.");
+          this.errors.push("Name required");
           }
 
         if (!this.email || !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.email)) {
-          this.errors.push("Email required.");
+          this.errors.push("Email required");
           }
     
-        if (!this.category) {
-          this.errors.push("Category required.");
+        if (!this.feedbackText) {
+          this.errors.push("Text required");
           }
 
-        if (!this.feedbackText) {
-          this.errors.push("Text required.");
+        if (this.category.length === 0) {
+          this.errors.push("Category required");
           }
         
         if (this.errors.length == 0) {
             this.create();
-        } 
+          }
       e.preventDefault();
     }
   }
@@ -120,5 +124,10 @@ export default {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+p {
+  text-align: center;
+  color: red;
 }
 </style>

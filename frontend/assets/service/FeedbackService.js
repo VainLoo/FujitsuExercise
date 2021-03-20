@@ -60,4 +60,12 @@ export default class FeedbackApi {
       withCredentials: true
     })
   }
+
+  deleteAll () {
+    return this.axios({
+      method: 'delete',
+      url: 'feedback',
+      withCredentials: true
+    })
+  }
 }

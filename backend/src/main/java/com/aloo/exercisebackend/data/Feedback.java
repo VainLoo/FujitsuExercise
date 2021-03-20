@@ -7,10 +7,10 @@ public class Feedback {
     @Id
     private String id;
 
-    private String name;
-    private String email;
-    private String[] category;
-    private String text;
+    private final String name;
+    private final String email;
+    private final String[] category;
+    private final String text;
 
     public Feedback(String name, String email, String[] category, String text) {
         this.name = name;

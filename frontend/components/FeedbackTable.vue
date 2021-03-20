@@ -3,11 +3,11 @@
     <table class="feedback-table" aria-label="Feedback table">
         <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Category</th>
-            <th scope="col">Text</th>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Category</th>
+            <th>Text</th>
         </tr>
         </thead>
         <tbody>
@@ -20,7 +20,7 @@
           </tr>
         </tbody>
     </table>
-    <button @click="deleteAll">Delete All Entries</button>
+    <button class="w-100 btn btn-lg btn-primary" @click="deleteAll">Delete All Entries</button>
 
 </div>
 </template>
@@ -39,15 +39,11 @@ export default {
     }
   },
     methods: { 
-        create() {
-            this.$services.feedback.create(feedback).then((data) => {
-            this.$emit('create', data)})
-        },
         deleteAll: function() {
-          this.feedbacks.forEach(feedback => this.$services.feedback.deleteItem(feedback.id))
-          return 0
+          this.$services.feedback.deleteAll().then((data) => {
+        this.$emit('update-table')});
         }
-    },
+    }
 }
 </script>
 
@@ -55,4 +51,5 @@ export default {
 .feedback-table-area, .feedback-table-area .feedback-table {
   width: 100%;
 }
+
 </style>
