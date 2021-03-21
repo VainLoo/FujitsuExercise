@@ -2,6 +2,9 @@ package com.aloo.exercisebackend.data;
 
 import org.springframework.data.annotation.Id;
 
+/**
+ * Represents a feedback entry in the database.
+ */
 public class Feedback {
 
     @Id
