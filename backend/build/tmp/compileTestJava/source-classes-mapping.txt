@@ -1,0 +1,2 @@
+com/aloo/exercisebackend/ExerciseBackendApplicationTests.java
+ com.aloo.exercisebackend.ExerciseBackendApplicationTests
