@@ -10,15 +10,25 @@ Also added the Delete all entries button for more convenient testing.
 
 # Running The project using Docker:
 (Requires Docker to be installed obviously)  
+Make sure Docker is running.  
+
+Run ```runProject.bat``` in the root directory of the project  
+OR  
 Run the following commands from the project root directory. 
 
 For the backend:  
+```
 docker build --file=backend/backend.dockerfile  -t exercise-web-backend .  
+```
 For the frontend:  
+```
 docker build --file=frontend/frontend.dockerfile  -t exercise-web-frontend .  
+```
 
 To run the built project:  
 docker-compose -f docker-compose.yml up  
+
+---
 
 The project is now running on the following URLs:  
 frontend: http://localhost:3000  
