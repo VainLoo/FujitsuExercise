@@ -26,8 +26,9 @@ docker build --file=frontend/frontend.dockerfile  -t exercise-web-frontend .
 ```
 
 To run the built project:  
+```
 docker-compose -f docker-compose.yml up  
-
+```
 ---
 
 The project is now running on the following URLs:  
