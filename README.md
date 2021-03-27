@@ -12,7 +12,7 @@ Also added the Delete all entries button for more convenient testing.
 (Requires Docker to be installed obviously)  
 Make sure Docker is running.  
 
-Run ```runProject.bat``` in the root directory of the project  
+Run ```runProject.bat``` located in the root directory of the project  
 OR  
 Run the following commands from the project root directory. 
 
